@@ -12,3 +12,5 @@ Spring支持3中依赖注入的方式
 
 构造方法注入：
 construct-arg没有name属性
+
+如果有特殊字符如<>，用<![CDATA[]]>包含

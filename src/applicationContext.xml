@@ -15,11 +15,26 @@
 		<constructor-arg value="Shanghai" index="1"></constructor-arg>
 		<constructor-arg value="300000" index="2" type="double"></constructor-arg>
 	</bean>
-	
+
 	<!-- 使用构造器注入属性值可以指定参数的位置和参数的类型！以区分重载的构造器 -->
 	<bean id="car2" class="com.lemon.beans.Car">
 		<constructor-arg value="Baoma" index="0"></constructor-arg>
-		<constructor-arg value="Beijing" index="1"></constructor-arg>
-		<constructor-arg value="240" type="int"></constructor-arg>
+		<!-- 如果字面值包含特殊字符可以使用<![CDATA[]>包裹起来 -->
+		<!-- 属性值也可以用value子节点进行配置 -->
+		<constructor-arg index="1">
+			<value><![CDATA[<Shanghai>]]></value>
+		</constructor-arg>
+		<constructor-arg type="int">
+			<value>250</value>
+		</constructor-arg>
+	</bean>
+	
+	<!-- 可以使用property的ref属性建立bean之间的引用关系 -->
+	<bean id="person" class="com.lemon.beans.Person">
+		<property name="name" value="Tom"></property>
+		<property name="age" value="24"></property>
+		<property name="car" ref="car2">
+			<!-- <ref bean="car"/> -->
+		</property>
 	</bean>
 </beans>
