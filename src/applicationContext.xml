@@ -77,11 +77,11 @@
 			</map>
 		</property>
 	</bean>
-	
+
 	<!-- 配置Properties属性值 -->
 	<bean id="dataSource" class="com.lemon.beans.collections.DataSource">
 		<property name="porperties">
-		<!-- 使用props和prop子节点来为Properties属性赋值 -->
+			<!-- 使用props和prop子节点来为Properties属性赋值 -->
 			<props>
 				<prop key="user">root</prop>
 				<prop key="passwor">1234</prop>
@@ -90,5 +90,20 @@
 			</props>
 		</property>
 	</bean>
+
+	<!-- 配置单独的集合bean，以供多个bean进行引用,需要导入util命名空间 -->
+	<util:list id="cars">
+		<ref bean="car" />
+		<ref bean="car2" />
+	</util:list>
+
+	<bean id="person4" class="com.lemon.beans.collections.Person">
+		<property name="name" value="test "></property>
+		<property name="age" value="29 "></property>
+		<property name="cars" ref="cars"></property>
+	</bean>
+	
+	<!-- 通过p命名空间为bean的属性赋值，需要先导入p命名空间 -->
+	<bean id="person5" class="com.lemon.beans.collections.Person" p:age="30" p:name="Queen" p:cars-ref="cars"></bean>
 
 </beans>

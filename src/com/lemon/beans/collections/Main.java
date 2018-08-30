@@ -18,6 +18,12 @@ public class Main {
 		
 		DataSource dataSource = ctx.getBean(DataSource.class);
 		System.out.println(dataSource);
+		
+		Person person4 = (Person) ctx.getBean("person4");
+		System.out.println(person4);
+		
+		Person person5 = (Person) ctx.getBean("person5");
+		System.out.println(person5);
 
 	}
 }
