@@ -77,5 +77,18 @@
 			</map>
 		</property>
 	</bean>
+	
+	<!-- 配置Properties属性值 -->
+	<bean id="dataSource" class="com.lemon.beans.collections.DataSource">
+		<property name="porperties">
+		<!-- 使用props和prop子节点来为Properties属性赋值 -->
+			<props>
+				<prop key="user">root</prop>
+				<prop key="passwor">1234</prop>
+				<prop key="jdbcUrl">jdbc:mysql:///test</prop>
+				<prop key="driverClass">com.mysql.driver.class</prop>
+			</props>
+		</property>
+	</bean>
 
 </beans>
