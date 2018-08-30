@@ -103,7 +103,7 @@
 		<property name="cars" ref="cars"></property>
 	</bean>
 	
-	<!-- 通过p命名空间为bean的属性赋值，需要先导入p命名空间 -->
+	<!-- 通过p命名空间为bean的属性赋值，需要先导入p命名空间，相比传统的配置方式更简洁 -->
 	<bean id="person5" class="com.lemon.beans.collections.Person" p:age="30" p:name="Queen" p:cars-ref="cars"></bean>
 
 </beans>

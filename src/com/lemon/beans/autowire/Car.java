@@ -1,0 +1,36 @@
+package com.lemon.beans.autowire;
+/**
+*@author created by liuyumeng
+*@date 2018年8月30日 --- 下午10:10:00
+*/
+public class Car {
+
+	private String brand;
+	
+	private double price;
+
+	public String getBrand() {
+		return brand;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	@Override
+	public String toString() {
+		return "Car [brand=" + brand + ", price=" + price + "]";
+	}
+	
+	
+}
+
+
