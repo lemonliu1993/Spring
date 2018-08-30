@@ -16,3 +16,5 @@ construct-arg没有name属性
 如果有特殊字符如<>，用<![CDATA[]]>包含
 
 在属性注入时，变量名一样不行，还要方法名也一样，比如有List<Car> cars,而getset方法是car,会报错
+
+bean之间的关系：继承，依赖。配置上的继承
