@@ -28,13 +28,54 @@
 			<value>250</value>
 		</constructor-arg>
 	</bean>
-	
+
 	<!-- 可以使用property的ref属性建立bean之间的引用关系 -->
 	<bean id="person" class="com.lemon.beans.Person">
 		<property name="name" value="Tom"></property>
 		<property name="age" value="24"></property>
-		<property name="car" ref="car2">
-			<!-- <ref bean="car"/> -->
+		<!-- <property name="car" > <ref bean="car"/> </property> -->
+		<!-- 内部bean -->
+		<property name="car">
+			<bean class="com.lemon.beans.Car">
+				<constructor-arg value="Ford"></constructor-arg>
+				<constructor-arg value="Changan"></constructor-arg>
+				<constructor-arg value="200000"></constructor-arg>
+			</bean>
 		</property>
 	</bean>
+
+
+	<bean id="person2" class="com.lemon.beans.Person">
+		<constructor-arg value="Lemon"></constructor-arg>
+		<constructor-arg value="25"></constructor-arg>
+		<constructor-arg ref="car"></constructor-arg>
+		<!-- 为级联属性赋值，注意：属性需要先初始化后才可以为级联属性赋值，否则会有异常，和Struts2不同 -->
+		<property name="car.maxSpeed" value="250"></property>
+	</bean>
+
+
+	<!-- 配置集合属性值 -->
+	<bean id="person3" class="com.lemon.beans.collections.Person">
+		<property name="name" value="lemon "></property>
+		<property name="age" value="25 "></property>
+		<property name="cars">
+			<list>
+				<ref bean="car" />
+				<ref bean="car2" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- 配置Map属性值 -->
+	<bean id="newPerson" class="com.lemon.beans.collections.NewPerson">
+		<property name="name" value="lemonAi "></property>
+		<property name="age" value="30 "></property>
+		<property name="cars">
+			<map>
+				<entry key="AA" value-ref="car"></entry>
+				<entry key="BB" value-ref="car2"></entry>
+			</map>
+		</property>
+	</bean>
+
 </beans>

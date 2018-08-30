@@ -40,6 +40,17 @@ public class Person {
 		return "Person [name=" + name + ", age=" + age + ", car=" + car + "]";
 	}
 	
+	public Person() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Person(String name, int age, Car car) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.car = car;
+	}
+	
 	
 }
 
