@@ -18,3 +18,6 @@ construct-arg没有name属性
 在属性注入时，变量名一样不行，还要方法名也一样，比如有List<Car> cars,而getset方法是car,会报错
 
 bean之间的关系：继承，依赖。配置上的继承
+
+bean的作用域：singleton；prototype；web环境作用域
+prototype：每次向容器获取bean，都会产生一个新的bean
