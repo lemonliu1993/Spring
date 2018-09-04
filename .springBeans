@@ -13,6 +13,7 @@
 		<config>src/beans-properties.xml</config>
 		<config>src/beans-spel.xml</config>
 		<config>src/beans-circle.xml</config>
+		<config>src/beans-factory.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
