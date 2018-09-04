@@ -45,3 +45,14 @@ SpEL：引用Bean，属性和方法
 <property name="prefix" value="#{prefixGenerator}"></propert>
 引用其他对象的属性
 调用其他方法，还可以链式操作
+
+bean的生命周期：
+Spring IOC容器对bean的生命周期进行管理的过程：
+通过构造器或者工厂方法创建bean实例
+为bean的属性设置值和对其他bean的引用
+将bean实例传递给bean后置处理器depostProcessBeforeInitialization
+调用bean的初始化方法
+将bean实例传递给bean后置处理器depostProcessAfterInitialization
+bean可以使用了
+当容器关闭时，调用bean的销毁方法
+在bean的声明里设置init-method和destroy-method属性，为bean指定初始化和销毁方法
