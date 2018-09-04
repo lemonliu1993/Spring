@@ -56,3 +56,6 @@ Spring IOC容器对bean的生命周期进行管理的过程：
 bean可以使用了
 当容器关闭时，调用bean的销毁方法
 在bean的声明里设置init-method和destroy-method属性，为bean指定初始化和销毁方法
+
+为什么使用FactoryBean来配置bean?
+因为有的时候配置一个bean的时候，需要用到ioc容器中其他bean，这时使用FactoryBean配置最合适
