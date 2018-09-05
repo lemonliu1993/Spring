@@ -59,3 +59,24 @@ bean可以使用了
 
 为什么使用FactoryBean来配置bean?
 因为有的时候配置一个bean的时候，需要用到ioc容器中其他bean，这时使用FactoryBean配置最合适
+
+基于注解德方式配置bean：
+1.基于注解配置Bean；
+2.基于注解来装配Bean德属性
+组件扫描：Spring能够从classpath下自动扫描，侦测和实例化具有特定注解德组件
+特定组件包括：(目前可以混用，因为ioc不能识别类别)
+@Component:基本注解，标识了一个受Spring管理德组件
+@Repository:标识持久层组件
+@Service:标识服务层(业务层)组件
+@Controller:标识表现层组件
+对于扫描到的组件，Spring有默认的命名策略；使用非限定类名，第一个字母小写。也可以再注解中通过value属性值标识组件的名称
+
+在classpath中扫描组件
+当在组件类上使用了特定的注解之后，还需要在Spring的配置文件中声明<context:component-scan>:
+base-package属性指定一个需要扫描的基类包，Spring容器将会扫描这个基类包里及其子包中的所有类。
+当需要扫描多个包时，可以使用都好分隔
+如果仅希望扫描特定的类而非基类包下的所有类，可使用resource-pattern属性过滤特定的类，示例：
+<context:component-scan base-package="com.lemon.spring.beans" resource-pattern="autowire/*.class"/>
+<context:unclude-filter>子节点标识要包含的目标类
+<context:exclude-filter>子节点标识要排除在外的目标类
+<context:component-scan>下可以拥有若干个<context:include-filter>和<context:exclude-filter>子节点
