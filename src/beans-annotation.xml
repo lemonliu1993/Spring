@@ -6,9 +6,11 @@
 
 
 	<!-- 指定Spring IOC 容器扫描的包 扫描当前包和当前包的子包,所有标识注解的bean都将被IOC容器管理 -->
+	<context:component-scan base-package="com.lemon.beans.annotation"
+		></context:component-scan>
 	<!-- 可以通过resource-pattern指定扫描的资源 -->
-	<!-- <context:component-scan base-package="com.lemon.beans.annotation" resource-pattern="repository/*.class" 
-		></context:component-scan> -->
+	<!-- <context:component-scan base-package="com.lemon.beans.annotation"
+		resource-pattern="repository/*.class"></context:component-scan> -->
 
 
 	<!-- context:exclude-filter 子节点指定排除哪些指定表达式的组件 -->
@@ -23,13 +25,10 @@
 
 
 
-	<context:component-scan base-package="com.lemon.beans.annotation">
-		<context:exclude-filter type="annotation"
-			expression="org.springframework.stereotype.Repository" />
-
-		<context:exclude-filter type="assignable"
-			expression="com.lemon.beans.annotation.repository.UserRepository" />
-	</context:component-scan>
+	<!-- <context:component-scan base-package="com.lemon.beans.annotation"> 
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository" 
+		/> <context:exclude-filter type="assignable" expression="com.lemon.beans.annotation.repository.UserRepository" 
+		/> </context:component-scan> -->
 
 
 </beans>

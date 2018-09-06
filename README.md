@@ -80,3 +80,5 @@ base-package属性指定一个需要扫描的基类包，Spring容器将会扫�
 <context:unclude-filter>子节点标识要包含的目标类
 <context:exclude-filter>子节点标识要排除在外的目标类
 <context:component-scan>下可以拥有若干个<context:include-filter>和<context:exclude-filter>子节点
+
+<context:component-scan> 元素还会自动注册 AutowiredAnnotationBeanPostProcessor 实例, 该实例可以自动装配具有 @Autowired 和 @Resource 、@Inject注解的属性.
