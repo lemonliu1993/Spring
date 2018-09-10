@@ -82,3 +82,6 @@ base-package属性指定一个需要扫描的基类包，Spring容器将会扫�
 <context:component-scan>下可以拥有若干个<context:include-filter>和<context:exclude-filter>子节点
 
 <context:component-scan> 元素还会自动注册 AutowiredAnnotationBeanPostProcessor 实例, 该实例可以自动装配具有 @Autowired 和 @Resource 、@Inject注解的属性.
+
+
+代理设计模式的原理: 使用一个代理将对象包装起来, 然后用该代理对象取代原始对象. 任何对原始对象的调用都要通过代理. 代理对象决定是否以及何时将方法调用转到原始对象上.
